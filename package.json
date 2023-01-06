@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "parcel",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "@tailwindcss/container-queries": "^0.1.0",
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
+  }
+}

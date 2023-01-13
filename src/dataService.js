@@ -1,7 +1,6 @@
 'use strict';
 
 const tunaServer = 'http://localhost:1608';
-const titleRegex = /\((feat.|ft.|featuring|with|from)(.*)\)/i;
 
 export async function isTunaServerReachable() {
 	try {
@@ -13,11 +12,23 @@ export async function isTunaServerReachable() {
 	}
 }
 
-export async function getData() {
+async function fetchData() {
 	var res = await fetch(tunaServer);
 	var data = await res.json();
+	return data;
+}
+
+export async function isTunaStatusPlaying() {
+	if (isTunaServerReachable()) {
+		var data = await fetchData();
+		return data.status === 'playing';
+	}
+}
+
+const titleRegex = /\((feat.|ft.|featuring|with|from)(.*)\)/i;
+export async function getDisplayData() {
+	var data = await fetchData();
 	return {
-		status: data.status,
 		title: data.title.replace(titleRegex, ''),
 		artists: data.artists,
 		cover_url: data.cover_path,

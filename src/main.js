@@ -4,7 +4,7 @@ var app = document.getElementById('app');
 var artists = document.getElementById('artists');
 var title = document.getElementById('title');
 
-import * as fetcher from './dataFetcher.js';
+import * as dataService from './dataService.js';
 
 async function setData(data) {
 	artists.innerText = data.artists.join(', ');
@@ -12,7 +12,8 @@ async function setData(data) {
 }
 
 async function update() {
-	var data = await fetcher.getData();
+	var data = await dataService.getDisplayData();
+
 	var appVisibility = data.status === 'playing' ? 'visible' : 'hidden';
 	if (data.status === 'playing') {
 		await setData(data);
@@ -22,9 +23,9 @@ async function update() {
 
 export async function run() {
 	try {
-		var isServerOnline = await fetcher.isTunaServerReachable();
+		var isServerOnline = await dataService.isTunaServerReachable();
+
 		if (isServerOnline) {
-			// update every 1 second
 			setInterval(update, 1000);
 		} else {
 			console.log(

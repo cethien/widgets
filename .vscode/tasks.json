@@ -15,28 +15,6 @@
 			"problemMatcher": [],
 			"label": "npm: dev",
 			"detail": "parcel src/index.html"
-		},
-		{
-			"type": "shell",
-			"group": "build",
-			"label": "zip",
-			"command": "zip",
-			"args": [
-				"-u",
-				"${workspaceFolder}/releases/obs-tuna-now-playing.zip",
-				"${workspaceFolder}/dist/*"
-			]
-		},
-		{
-			"type": "shell",
-			"group": "build",
-			"label": "tar",
-			"command": "tar",
-			"args": [
-				"-czvf",
-				"${workspaceFolder}/releases/obs-tuna-now-playing.tar.gz",
-				"${workspaceFolder}/dist/*"
-			]
 		}
 	]
 }

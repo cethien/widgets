@@ -1,10 +1,24 @@
 {
+  "name": "obs-tuna-now-playing",
+  "version": "1.0.0",
+  "description": "using tuna",
+  "main": "tailwind.config.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cethien/obs-tuna-now-playing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cethien/obs-tuna-now-playing/issues"
+  },
+  "homepage": "https://github.com/Cethien/obs-tuna-now-playing#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2",
     "@tailwindcss/container-queries": "^0.1.0",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",

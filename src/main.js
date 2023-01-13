@@ -5,6 +5,16 @@ var title = document.getElementById('title');
 
 import * as dataService from './dataService.js';
 
+async function setAppVisiblity(isHidden) {
+	if (isHidden) {
+		app.classList.remove('flex');
+		app.classList.add('hidden');
+	} else {
+		app.classList.add('flex');
+		app.classList.remove('hidden');
+	}
+}
+
 async function setData(data) {
 	artists.innerText = data.artists.join(', ');
 	title.innerText = data.title;
@@ -13,8 +23,7 @@ async function setData(data) {
 async function update() {
 	var data = await dataService.getDisplayData();
 	var isPlaying = await dataService.isTunaStatusPlaying();
-	var appVisibility = isPlaying ? 'visible' : 'hidden';
-	app.style.visibility = appVisibility;
+	await setAppVisiblity(!isPlaying);
 	if (isPlaying) {
 		await setData(data);
 	}

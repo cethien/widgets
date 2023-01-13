@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply h-screen flex flex-row gap-[2vw] items-stretch justify-end p-2;
+	@apply h-screen hidden flex-row gap-[2vw] items-stretch justify-end p-2;
 }
 
 p,

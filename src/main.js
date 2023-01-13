@@ -1,6 +1,5 @@
 'use strict';
-
-var app = document.getElementById('app');
+var app = document.body;
 var artists = document.getElementById('artists');
 var title = document.getElementById('title');
 
@@ -13,18 +12,18 @@ async function setData(data) {
 
 async function update() {
 	var data = await dataService.getDisplayData();
-
-	var appVisibility = data.status === 'playing' ? 'visible' : 'hidden';
-	if (data.status === 'playing') {
+	console.log(data);
+	var isPlaying = dataService.isTunaStatusPlaying();
+	var appVisibility = isPlaying ? 'visible' : 'hidden';
+	app.style.visibility = appVisibility;
+	if (isPlaying) {
 		await setData(data);
 	}
-	app.style.visibility = appVisibility;
 }
 
 export async function run() {
 	try {
 		var isServerOnline = await dataService.isTunaServerReachable();
-
 		if (isServerOnline) {
 			setInterval(update, 1000);
 		} else {

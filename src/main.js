@@ -12,7 +12,7 @@ async function setData(data) {
 
 async function update() {
 	var data = await dataService.getDisplayData();
-	var isPlaying = dataService.isTunaStatusPlaying();
+	var isPlaying = await dataService.isTunaStatusPlaying();
 	var appVisibility = isPlaying ? 'visible' : 'hidden';
 	app.style.visibility = appVisibility;
 	if (isPlaying) {

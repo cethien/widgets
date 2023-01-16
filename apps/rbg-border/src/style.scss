@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-gray-50 dark:bg-gray-900;
+}
+
+.app {
+	@apply h-screen border-[1.2rem] rounded-xl;
+
+	border-image: conic-gradient(
+			from var(--angle),
+			red,
+			yellow,
+			lime,
+			aqua,
+			blue,
+			magenta,
+			red
+		)
+		1;
+
+	--angle: 0deg;
+	animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false;
+}

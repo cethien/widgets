@@ -4,7 +4,7 @@ using [Tuna](https://obsproject.com/forum/resources/tuna.843/)
 
 ## Customizing
 
-you can customize using the css-field in OBS Browser Source like this#️⃣
+you can customize using the css-field in OBS Browser Source like this
 
 ```css
 body {

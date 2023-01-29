@@ -3,35 +3,60 @@
 @tailwind utilities;
 
 body {
-	@apply h-screen hidden flex-row gap-[2vw] items-stretch justify-end p-2;
+	@apply h-screen hidden flex-row gap-[2vw] items-stretch justify-end p-2 rounded-2xl;
 }
 
 p,
-#wave {
+.wave {
 	@apply text-shadow-md;
 }
 
-@for $i from 1 through 3 {
-	#Line_#{$i} {
-		animation: pulse 1s infinite;
-		animation-delay: $i * 0.15s;
+.wave {
+	@apply fill-sky-800 h-[25vh] w-[8vw];
+
+	.wave1 {
+		animation-delay: 0.6s;
+	}
+	.wave2 {
+		animation-delay: 0.3s;
+	}
+	.wave3 {
+		animation-delay: 0.45s;
+	}
+	.wave4 {
+		animation-delay: 0.15s;
+	}
+	.wave5 {
+		animation-delay: 0.3s;
 	}
 }
 
-@keyframes pulse {
+@for $i from 1 through 5 {
+	.wave#{$i} {
+		transform: scaleY(0);
+		transform-origin: bottom;
+		animation: scale 0.6s infinite;
+	}
+}
+
+@keyframes scale {
 	0% {
-		transform: scaleY(1);
-		transform-origin: 50% 50%;
+		transform: scaleY(0.25);
 	}
-
+	16% {
+		transform: scaleY(0.5);
+	}
+	33% {
+		transform: scaleY(0.75);
+	}
 	50% {
-		transform: scaleY(0.7);
-		transform-origin: 50% 50%;
-	}
-
-	100% {
 		transform: scaleY(1);
-		transform-origin: 50% 50%;
+	}
+	75% {
+		transform: scaleY(0.75);
+	}
+	100% {
+		transform: scaleY(0.5);
 	}
 }
 

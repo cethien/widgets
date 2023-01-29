@@ -4,18 +4,25 @@ using [Tuna](https://obsproject.com/forum/resources/tuna.843/)
 
 ## Customizing
 
-you can customize using the css-field in OBS Browser Source like this
+here are some stuff you can customize via the CSS tab in OBS:
+
+### Font
 
 ```css
 body {
-	background-color: transparent;
-	margin: 0px auto;
-	overflow: hidden;
-	font-family: 'Comic Sans MS';
-	background-image: linear-gradient(
-		to right,
-		rgba(0, 0, 0, 0),
-		rgba(77, 125, 100, 0.5)
-	);
+	font-family: 'Comic Sans MS' !important;
+}
+```
+
+### App orientation
+
+```css
+body {
+	flex-direction: row-reverse !important;
+}
+
+figure {
+	align-items: flex-start !important;
+	text-align: left !important;
 }
 ```

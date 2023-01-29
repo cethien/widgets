@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-	@apply h-screen hidden flex-row gap-[2vw] items-stretch justify-end p-2 rounded-2xl;
+	@apply h-screen hidden flex-row gap-[2vw] items-stretch justify-end p-2 rounded-2xl bg-gray-900 bg-opacity-50;
+	backdrop-filter: acrylic;
 }
 
 p,

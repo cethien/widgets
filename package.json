@@ -1,14 +1,19 @@
 {
   "name": "obs-widgets",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.0",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.8.2",
+    "@parcel/core": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.2",
+    "@tailwindcss/container-queries": "^0.1.0",
+    "parcel": "^2.8.3",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.4"
+    "tailwindcss": "^3.2.6"
   }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		@import 'tuna-now-playing/style.scss';
+	</style>
+</head>
+
+<body>
+	<!-- text -->
+	<figure class="flex flex-col gap-[2vh] p-2 justify-center items-end text-right">
+		<p id="title" class="text-[22vh] font-bold text-slate-200"></p>
+		<p id="artists" class="text-[16vh] italic text-slate-400"></p>
+	</figure>
+
+	<!-- wave -->
+	<div class="flex justify-center items-center">
+		<svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 50">
+			<rect class="wave1" x="00" y="" width="6" height="100%" />
+			<rect class="wave2" x="12" y="0" width="6" height="100%" />
+			<rect class="wave3" x="24" y="0" width="6" height="100%" />
+			<rect class="wave4" x="36" y="0" width="6" height="100%" />
+			<rect class="wave5" x="48" y="0" width="6" height="100%" />
+		</svg>
+	</div>
+</body>
+<script type="module" class="hidden">
+	import * as app from './tuna-now-playing/main.js';
+	app.run();
+</script>
+
+</html>

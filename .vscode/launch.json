@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:1234/",
+            "webRoot": "${workspaceFolder}",
+        },
+        {
+            "name": "Launch npm:dev",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Dev",
+            "stopAll": true,
+            "configurations": [
+                "Launch npm:dev",
+                "Launch Chrome against localhost"
+            ]
+        }
+    ]
+}

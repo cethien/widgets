@@ -1,0 +1,74 @@
+{
+	"version": "2.0.0",
+	"problemMatcher": [],
+	"options": {
+		"cwd": "${workspaceFolder}"
+	},
+	"tasks": [
+		{
+			"label": "npm: dev",
+			"type": "npm",
+			"script": "dev",
+			"detail": "parcel src/index.html"
+		},
+		{
+			"label": "npm: build",
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"detail": "parcel build src/index.html"
+		},
+		{
+			"label": "clean dist folder",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"${workspaceFolder}/dist/*"
+			]
+		},
+		{
+			"label": "clean release folder",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"${workspaceFolder}/release/*"
+			]
+		},
+		{
+			"label": "pack tar",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/dist && tar -cvf ${workspaceFolder}/release/obs-widgets.tar *",
+		},
+		{
+			"label": "pack zip",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/dist && zip ${workspaceFolder}/release/obs-widgets.zip *",
+		},
+		{
+			"label": "gh: release",
+			"type": "shell",
+			"command": "gh",
+			"args": [
+				"release",
+				"create",
+				"${input:version-tag}",
+				"${workspaceFolder}/release/*",
+				"--generate-notes"
+			],
+			"problemMatcher": [],
+			"dependsOn": [
+				"npm: build"
+			]
+		}
+	],
+	"inputs": [
+		{
+			"id": "version-tag",
+			"type": "promptString",
+			"default": "v1.2.3",
+			"description": "github release version tag"
+		}
+	]
+}

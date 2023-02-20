@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	@apply bg-gray-50 dark:bg-gray-900;
-}
-
 .app {
 	@apply h-screen border-[1.2rem] rounded-xl;
 

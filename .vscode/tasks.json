@@ -1,9 +1,6 @@
 {
 	"version": "2.0.0",
 	"problemMatcher": [],
-	"options": {
-		"cwd": "${workspaceFolder}"
-	},
 	"tasks": [
 		{
 			"label": "npm: dev",
@@ -59,8 +56,13 @@
 			],
 			"problemMatcher": [],
 			"dependsOn": [
-				"npm: build"
-			]
+				"clean dist folder",
+				"clean release folder",
+				"npm: build",
+				"pack tar",
+				"pack zip"
+			],
+			"dependsOrder": "sequence"
 		}
 	],
 	"inputs": [

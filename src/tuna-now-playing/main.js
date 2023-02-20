@@ -1,5 +1,5 @@
 'use strict';
-var app = document.body;
+var app = document.getElementById('app');
 var artists = document.getElementById('artists');
 var title = document.getElementById('title');
 

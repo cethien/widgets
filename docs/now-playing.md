@@ -6,23 +6,27 @@ using [Tuna](https://obsproject.com/forum/resources/tuna.843/)
 
 here are some stuff you can customize via the CSS tab in OBS:
 
-### Font
+### Font / Text
 
 ```css
-body {
+figure {
 	font-family: 'Comic Sans MS' !important;
+	text-transform: lowercase;
 }
 ```
 
-### App orientation
+### App Orientation
 
 ```css
-body {
+figure {
 	flex-direction: row-reverse !important;
 }
+/* media query for 100px modifier */
+#texts {
+	@media (max-height: 100px) : {
+		align-items: flex-start !important;
+	}
 
-figure {
-	align-items: flex-start !important;
 	text-align: left !important;
 }
 ```

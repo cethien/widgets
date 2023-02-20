@@ -2,7 +2,11 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,ts,jsx,tsx,svg}'],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				small: { raw: '(max-height: 125px)' },
+			},
+		},
 	},
 	plugins: [require('@tailwindcss/container-queries')],
 };

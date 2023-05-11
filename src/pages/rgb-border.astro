@@ -1,0 +1,38 @@
+---
+import App from '../layouts/_app.astro'
+---
+
+<App><div></div></App>
+
+<style is:global lang="scss">
+	@property --angle {
+		syntax: '<angle>';
+		initial-value: 0deg;
+		inherits: false;
+	}
+
+	div {
+		@apply h-screen rounded-xl border-[1.2rem];
+
+		--angle: 0deg;
+		border-image: conic-gradient(
+				from var(--angle),
+				red,
+				yellow,
+				lime,
+				aqua,
+				blue,
+				magenta,
+				red
+			)
+			1;
+
+		animation: 10s linear infinite;
+	}
+
+	@keyframes rotate {
+		to {
+			--angle: 360deg;
+		}
+	}
+</style>

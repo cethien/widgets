@@ -3,66 +3,19 @@
 	"problemMatcher": [],
 	"tasks": [
 		{
-			"label": "npm: dev",
-			"type": "npm",
-			"script": "dev",
-			"detail": "parcel src/index.html"
-		},
-		{
-			"label": "npm: build",
-			"type": "npm",
-			"script": "build",
-			"group": "build",
-			"detail": "parcel build src/index.html"
-		},
-		{
-			"label": "clean dist folder",
+			"label": "prepublish",
 			"type": "shell",
-			"command": "rm",
-			"args": [
-				"-rf",
-				"${workspaceFolder}/dist/*"
-			]
+			"command": "yarn",
+			"args": ["run", "prepublish"],
+			"problemMatcher": []
 		},
 		{
-			"label": "clean release folder",
+			"label": "gh: publish",
 			"type": "shell",
-			"command": "rm",
-			"args": [
-				"-rf",
-				"${workspaceFolder}/release/*"
-			]
-		},
-		{
-			"label": "pack tar",
-			"type": "shell",
-			"command": "cd ${workspaceFolder}/dist && tar -cvf ${workspaceFolder}/release/obs-widgets.tar *",
-		},
-		{
-			"label": "pack zip",
-			"type": "shell",
-			"command": "cd ${workspaceFolder}/dist && zip ${workspaceFolder}/release/obs-widgets.zip *",
-		},
-		{
-			"label": "gh: release",
-			"type": "shell",
-			"command": "gh",
-			"args": [
-				"release",
-				"create",
-				"${input:version-tag}",
-				"${workspaceFolder}/release/*",
-				"--generate-notes"
-			],
+			"command": "yarn",
+			"args": ["run", "publish:gh", "${input:version-tag}"],
 			"problemMatcher": [],
-			"dependsOn": [
-				"clean dist folder",
-				"clean release folder",
-				"npm: build",
-				"pack tar",
-				"pack zip"
-			],
-			"dependsOrder": "sequence"
+			"dependsOn": ["prepublish"]
 		}
 	],
 	"inputs": [

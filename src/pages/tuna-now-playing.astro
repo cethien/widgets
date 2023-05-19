@@ -159,7 +159,7 @@ import App from '../layouts/_app.astro'
 		document.querySelector('[data-artists]')!
 
 	const url = 'http://localhost:1608'
-	const titleRegex = /\((feat.|ft.|featuring|with|from)(.*)\)/i
+	const titleRegex = (\(|\[)(feat.|ft.|featuring|with|from)(.*)(\)|\])/g
 
 	declare type TrackInfo = {
 		status: string

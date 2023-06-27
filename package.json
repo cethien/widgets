@@ -9,12 +9,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"clean:dist": "rm -rf ./dist/*",
-		"clean:release": "rm -rf ./release/*",
-		"pack:tar": "cd ./dist && tar -cvf ../release/obs-widgets.tar *",
-		"pack:zip": "cd ./dist && zip ../release/obs-widgets.zip *",
-		"prepublish": "yarn run clean:dist && yarn run clean:release && yarn run build && yarn run pack:tar && yarn run pack:zip",
-		"publish:gh": "gh release create $1 ./release/* --generate-notes"
+		"cleanup": "rimraf dist node_modules && yarn install"
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^3.1.2",
@@ -30,6 +25,7 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-astro": "^0.8.0",
 		"prettier-plugin-tailwindcss": "^0.2.8",
+		"rimraf": "^5.0.1",
 		"sass": "^1.62.1"
 	}
 }

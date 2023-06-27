@@ -9,24 +9,16 @@ here are some stuff you can customize via the CSS tab in OBS:
 ### Font / Text
 
 ```css
-figure {
+figure p {
 	font-family: 'Comic Sans MS' !important;
 	text-transform: lowercase;
 }
 ```
 
-### App Orientation
+## Remove Wave Form
 
 ```css
-figure {
-	flex-direction: row-reverse !important;
-}
-/* media query for 100px modifier */
-#texts {
-	@media (max-height: 100px) : {
-		align-items: flex-start !important;
-	}
-
-	text-align: left !important;
+#waveform {
+	visibility: collapse;
 }
 ```

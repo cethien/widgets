@@ -2,7 +2,7 @@
 
 cuz i can
 
-## Items
+## Widgets
 
 - [Now Playing](docs/now-playing.md)
 - [RGB Border](docs/rgb-border.md)

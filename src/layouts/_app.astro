@@ -1,4 +1,9 @@
 ---
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -13,6 +18,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />

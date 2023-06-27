@@ -34,6 +34,8 @@ import WaveForm from './WaveForm.astro'
 </AppLayout>
 
 <script>
+	import { titleRegex } from '~/utils'
+
 	const appElement = document.querySelector('[data-app]')!
 	const titleElement: HTMLParagraphElement =
 		document.querySelector('[data-title]')!
@@ -41,7 +43,6 @@ import WaveForm from './WaveForm.astro'
 		document.querySelector('[data-artists]')!
 
 	const url = 'http://localhost:1608'
-	const titleRegex = /.\((feat\.|ft\.|featuring|with|from)(.*?)\)/i
 
 	declare type TrackInfo = {
 		status: string

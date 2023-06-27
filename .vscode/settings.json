@@ -1,8 +1,15 @@
 {
 	"npm.packageManager": "yarn",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[astro]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"prettier.documentSelectors": ["**/*.astro"],
-	"eslint.validate": ["javascript", "astro", "typescript"]
+	"prettier.documentSelectors": [
+		"**/*.astro"
+	],
+	"eslint.validate": [
+		"javascript",
+		"astro",
+		"typescript"
+	]
 }

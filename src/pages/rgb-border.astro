@@ -1,8 +1,6 @@
 ---
-import App from '../layouts/_app.astro'
+import AppLayout from '~/layouts/AppLayout.astro'
 ---
-
-<App><div></div></App>
 
 <style is:global lang="scss">
 	@property --angle {
@@ -11,7 +9,7 @@ import App from '../layouts/_app.astro'
 		inherits: false;
 	}
 
-	div {
+	#border {
 		@apply h-screen rounded-xl border-[1.2rem];
 
 		--angle: 0deg;
@@ -36,3 +34,7 @@ import App from '../layouts/_app.astro'
 		}
 	}
 </style>
+
+<AppLayout title="RGB Border">
+	<div id="border"></div>
+</AppLayout>

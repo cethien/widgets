@@ -12,13 +12,16 @@
 			"request": "launch",
 			"type": "firefox",
 			"reAttach": true,
-			"url": "http://localhost:3000"
+			"url": "http://localhost:3000/obs-widgets/"
 		}
 	],
 	"compounds": [
 		{
 			"name": "dev",
-			"configurations": ["Development server", "launch browser"],
+			"configurations": [
+				"Development server",
+				"launch browser"
+			],
 			"stopAll": true
 		}
 	]

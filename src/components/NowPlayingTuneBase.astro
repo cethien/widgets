@@ -1,0 +1,95 @@
+---
+import AppLayout from '~/layouts/AppLayout.astro'
+import WaveForm from './WaveForm.astro'
+---
+
+<AppLayout title="Tuna Now Playing">
+	<figure
+		data-app
+		id="app"
+		class:list={[
+			'hidden',
+			'h-screen gap-[3vw] p-2',
+			'backdrop-[acrylic] rounded-2xl bg-slate-900/50'
+		]}
+	>
+		<WaveForm />
+		<!-- text -->
+		<div
+			id="texts"
+			class:list={['flex-1', 'flex  gap-[8vh]', 'text-center']}
+		>
+			<p
+				data-title
+				class="text-[22vh] font-bold text-slate-200 small:text-[30vh]"
+			>
+			</p>
+			<p
+				data-artists
+				class="text-[22vh] italic text-slate-400 small:text-[30vh]"
+			>
+			</p>
+		</div>
+	</figure>
+</AppLayout>
+
+<script>
+	const appElement = document.querySelector('[data-app]')!
+	const titleElement: HTMLParagraphElement =
+		document.querySelector('[data-title]')!
+	const artistsElement: HTMLParagraphElement =
+		document.querySelector('[data-artists]')!
+
+	const url = 'http://localhost:1608'
+	const titleRegex = /.\((feat\.|ft\.|featuring|with|from)(.*?)\)/i
+
+	declare type TrackInfo = {
+		status: string
+		title: string
+		artists: string[]
+	}
+
+	async function getTrackInfo(url: string) {
+		try {
+			const data = await fetch(url).then((res) => res.json())
+
+			const info: TrackInfo = {
+				status: data.status,
+				title: data.title.replace(titleRegex, ''),
+				artists: data.artists
+			}
+
+			return info
+		} catch (err) {
+			console.error(err)
+		}
+	}
+
+	function toggleVisible(status: string) {
+		if (status) {
+			appElement.classList.remove('hidden')
+			appElement.classList.add('flex')
+		} else {
+			appElement.classList.add('hidden')
+			appElement.classList.remove('flex')
+		}
+
+		return status
+	}
+
+	function setElements(info: TrackInfo) {
+		if (toggleVisible(info.status) === 'playing') {
+			titleElement.innerText = info.title
+			artistsElement.innerText = info.artists.join(', ')
+		}
+	}
+
+	async function update() {
+		const info = await getTrackInfo(url)
+		setElements(info!)
+	}
+
+	setInterval(async () => {
+		await update()
+	}, 1_000)
+</script>

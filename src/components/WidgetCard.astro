@@ -1,0 +1,31 @@
+---
+export interface Props {
+	title: string
+	description: string
+	href: string
+	previewImage: string
+}
+
+const { title, previewImage, href, description } = Astro.props
+---
+
+<a href={href}>
+	<figure
+		class:list={[
+			'scale-95 hover:scale-100',
+			'rounded-xl border-2 border-cyan-500 bg-zinc-50 shadow-xl dark:bg-slate-700'
+		]}
+		class="overflow-hidden duration-200 ease-in-out"
+	>
+		<img
+			src={previewImage}
+			class="h-18 w-full"
+		/>
+		<div class="flex flex-col items-center justify-center px-6 py-4">
+			<div class="mb-4 text-3xl font-bold uppercase">{title}</div>
+			<p class="text-xl">
+				{description}
+			</p>
+		</div>
+	</figure>
+</a>

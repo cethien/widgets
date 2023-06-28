@@ -1,26 +1,19 @@
 # How to use
 
-1. Install & Setup Tuna
-2. Enable local server
-3. Create a browser source and paste the url into it
-
-# Presets
-
-![left](/obs-widgets/now-playing-preset-left.png)
-[open](/obs-widgets/now-playing-tuna/left)
-
-![left-compact](/obs-widgets/now-playing-preset-left-compact.png)
-[open](/obs-widgets/now-playing-tuna/left-compact)
-
-![right](/obs-widgets/now-playing-preset-right.png)
-[open](/obs-widgets/now-playing-tuna/right)
-
-![right-compact](/obs-widgets/now-playing-preset-right-compact.png)
-[open](/obs-widgets/now-playing-tuna/right-compact)
+1. Install & Setup <a href="https://obsproject.com/forum/resources/tuna.843/" target="_blank">Tuna</a>
+1. Enable local server (check guide on)
+1. Select a preset:
+   - [left](/obs-widgets/now-playing-tuna/left)
+   - [left-compact](/obs-widgets/now-playing-tuna/left-compact)
+   - [right](/obs-widgets/now-playing-tuna/right)
+   - [right-compact](/obs-widgets/now-playing-tuna/right-compact)
+1. Create a browser source and paste the url into it
 
 # Customizing
 
-here are some stuff you can customize via the CSS tab in OBS:
+you can customize the widget via CSS.
+
+use the CSS Tab in OBS.
 
 ## Font / Text
 

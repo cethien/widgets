@@ -1,5 +1,3 @@
-export const titleRegex = /.\((feat\.|ft\.|featuring|with|from)(.*?)\)/i
-
 export type AppInfo = {
 	urlBase: string
 	fullName: string

@@ -1,8 +1,9 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "OBS Widgets",
+	"name": "obs-widgets",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"remoteUser": "node"
+	"remoteUser": "node",
+	"postStartCommand": "yarn install --silent && yarn --version"
 }

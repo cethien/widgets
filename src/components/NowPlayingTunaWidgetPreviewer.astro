@@ -1,0 +1,61 @@
+<div class="flex flex-col gap-8">
+	<nav class="flex flex-row items-center justify-center gap-2">
+		<button data-btn-set-preset="left">left</button>
+		<button data-btn-set-preset="left-compact">left-compact</button>
+		<button data-btn-set-preset="right">right</button>
+		<button data-btn-set-preset="right-compact">right-compact</button>
+	</nav>
+
+	<div
+		id="appframe"
+		class="h-[120px] w-[720px] resize overflow-auto border-2 border-slate-500/30 bg-black shadow-xl"
+	>
+		<iframe
+			id="app"
+			src="/obs-widgets/now-playing-tuna/left"
+			class="h-full w-full select-none"
+		></iframe>
+	</div>
+
+	<button
+		class="text-2xl"
+		data-btn-get-link
+		>copy link</button
+	>
+</div>
+
+<style>
+	button {
+		@apply self-center rounded bg-gradient-to-br px-2 py-1 text-lg font-semibold uppercase shadow-xl dark:from-purple-700 dark:to-cyan-700;
+	}
+</style>
+
+<script>
+	function copyToClipboard() {
+		const link = document.getElementById('app')!.getAttribute('src')
+		navigator.clipboard.writeText('https://cethien.github.io' + link)
+		alert('link copied to clipboard!')
+	}
+
+	function setFrame(val: string) {
+		const app = document.getElementById('app')!
+		app.setAttribute('src', `/obs-widgets/now-playing-tuna/${val}`)
+	}
+
+	function handleResize() {
+		const frame = document.querySelector<HTMLDivElement>('#appframe')
+		console.log(`${frame?.offsetHeight} | ${frame?.offsetWidth}`)
+	}
+
+	document
+		.querySelectorAll<HTMLButtonElement>('[data-btn-set-preset]')
+		.forEach((e) => {
+			e.addEventListener('click', () =>
+				setFrame(e.getAttribute('data-btn-set-preset')!)
+			)
+		})
+
+	document
+		.querySelector<HTMLButtonElement>('[data-btn-get-link]')
+		?.addEventListener('click', copyToClipboard)
+</script>

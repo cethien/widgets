@@ -2,11 +2,12 @@
 import PageLayout from '~/layouts/PageLayout.astro'
 
 import MarkdownWrapper from '~/components/MarkdownWrapper.astro'
-
+import NowPlayingTunaWidgetPreviewer from '~/components/NowPlayingTunaWidgetPreviewer.astro'
 import { Content as Content } from '~/md/now-playing.md'
 ---
 
 <PageLayout title="Now Playing (Tuna)">
+	<NowPlayingTunaWidgetPreviewer />
 	<MarkdownWrapper>
 		<Content />
 	</MarkdownWrapper>

@@ -1,13 +1,10 @@
 # How to use
 
 1. Install & Setup <a href="https://obsproject.com/forum/resources/tuna.843/" target="_blank">Tuna</a>
-1. Enable local server (check guide on)
-1. Select a preset:
-   - [left](/obs-widgets/now-playing-tuna/left)
-   - [left-compact](/obs-widgets/now-playing-tuna/left-compact)
-   - [right](/obs-widgets/now-playing-tuna/right)
-   - [right-compact](/obs-widgets/now-playing-tuna/right-compact)
-1. Create a browser source and paste the url into it
+1. Enable local server (check guide on the forum)
+1. Choose your desired preset from the previer above and click on 'copy link'
+1. Create a browser source and paste the link into it
+1. Profit!
 
 # Customizing
 

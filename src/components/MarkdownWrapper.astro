@@ -1,0 +1,60 @@
+<style is:global lang="scss">
+	.markdown {
+		h1,
+		h2,
+		h3 {
+			@apply mb-2 mt-4 select-none;
+		}
+
+		p,
+		ol,
+		ul {
+			@apply text-xl;
+		}
+
+		img {
+			@apply select-none;
+		}
+
+		h1 {
+			@apply text-4xl font-extrabold;
+		}
+		h2 {
+			@apply text-3xl font-bold;
+		}
+		h3 {
+			@apply text-2xl font-semibold italic;
+		}
+
+		p {
+			@apply mb-3 flex items-center;
+
+			a {
+				@apply inline-block select-text p-2 text-blue-800 underline hover:text-cyan-500 dark:text-blue-400;
+			}
+		}
+
+		ol,
+		ul {
+			a {
+				@apply select-text text-blue-800 underline hover:text-cyan-500 dark:text-blue-400;
+			}
+		}
+
+		ol {
+			@apply list-inside list-decimal;
+		}
+
+		ul {
+			@apply list-inside list-disc;
+		}
+
+		pre {
+			@apply rounded-xl p-4 shadow-xl dark:bg-slate-400;
+		}
+	}
+</style>
+
+<div class="markdown">
+	<slot />
+</div>

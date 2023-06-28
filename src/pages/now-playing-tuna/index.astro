@@ -1,5 +1,8 @@
 ---
-import NowPlayingBase from '~/components/NowPlayingTuneBase.astro'
+import PageLayout from '~/layouts/PageLayout.astro'
+import { Content as Content } from '~/md/now-playing.md'
 ---
 
-<NowPlayingBase />
+<PageLayout title="Now Playing (Tuna)">
+	<Content />
+</PageLayout>

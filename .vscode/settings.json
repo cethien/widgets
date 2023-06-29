@@ -11,5 +11,8 @@
 		"javascript",
 		"astro",
 		"typescript"
-	]
+	],
+	"files.associations": {
+		"*.mdx": "markdown"
+	}
 }

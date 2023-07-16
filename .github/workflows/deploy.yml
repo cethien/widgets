@@ -2,8 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   pull_request:
-  push:
     branches: [main]
+    paths:
+      - 'src/**'
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment

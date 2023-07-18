@@ -6,7 +6,6 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cethien.github.io',
-  base: '/obs-widgets',
+  site: 'https://obs-widgets.cethien.xyz',
   integrations: [compress(), tailwind(), mdx()]
 });

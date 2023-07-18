@@ -12,7 +12,7 @@
 	>
 		<iframe
 			id="app"
-			src="/obs-widgets/now-playing-tuna/left"
+			src="/now-playing-tuna/left"
 			class="h-full w-full select-none"
 		></iframe>
 	</div>
@@ -39,7 +39,7 @@
 
 	function setFrame(val: string) {
 		const app = document.getElementById('app')!
-		app.setAttribute('src', `/obs-widgets/now-playing-tuna/${val}`)
+		app.setAttribute('src', `/now-playing-tuna/${val}`)
 	}
 
 	function handleResize() {

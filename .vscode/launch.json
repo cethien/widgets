@@ -12,7 +12,7 @@
 			"request": "launch",
 			"type": "firefox",
 			"reAttach": true,
-			"url": "http://localhost:3000/obs-widgets/"
+			"url": "http://localhost:3000/"
 		}
 	],
 	"compounds": [

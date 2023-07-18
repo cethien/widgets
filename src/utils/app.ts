@@ -4,6 +4,6 @@ export type AppInfo = {
 }
 
 export const appInfo: AppInfo = {
-	urlBase: '/obs-widgets/',
+	urlBase: '/',
 	fullName: 'OBS Widgets'
 }

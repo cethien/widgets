@@ -26,7 +26,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-astro": "^0.27.0",
 		"prettier": "^2.8.8",
-		"prettier-plugin-astro": "^0.8.0",
+		"prettier-plugin-astro": "^0.11.0",
 		"prettier-plugin-tailwindcss": "^0.2.8",
 		"rimraf": "^5.0.1",
 		"sass": "^1.62.1"

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	pre,
+	code {
+		@apply mb-2;
+	}
+
+	img {
+		@apply h-64 w-64 rounded-full object-cover object-center;
+	}
+
+	pre {
+		@apply rounded p-2 text-cyan-400;
+	}
+}

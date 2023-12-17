@@ -2,26 +2,23 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Development server",
-			"type": "node-terminal",
+			"name": "Launch server",
 			"request": "launch",
-			"command": "./node_modules/.bin/astro dev",
+			"type": "node-terminal",
+			"command": "make dev"
 		},
 		{
-			"name": "launch browser",
+			"name": "Launch Edge",
 			"request": "launch",
-			"type": "firefox",
-			"reAttach": true,
-			"url": "http://localhost:3000/"
+			"type": "msedge",
+			"url": "http://localhost:1313",
+			"webRoot": "${workspaceFolder}"
 		}
 	],
 	"compounds": [
 		{
 			"name": "dev",
-			"configurations": [
-				"Development server",
-				"launch browser"
-			],
+			"configurations": ["Launch server", "Launch Edge"],
 			"stopAll": true
 		}
 	]

@@ -8,7 +8,7 @@
 	"singleAttributePerLine": true,
 	"semi": false,
 	"plugins": [
-		"prettier-plugin-astro",
+		"prettier-plugin-go-template",
 		"prettier-plugin-tailwindcss"
 	]
 }

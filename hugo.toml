@@ -1,0 +1,11 @@
+baseURL      = 'https://widgets.cethien.xyz/'
+languageCode = 'de-DE'
+title        = 'Widgets'
+
+[[menus.main]]
+name    = 'Home'
+pageRef = '/'
+weight  = 10
+
+[module]
+hugoVersion.min = "v0.115.0"

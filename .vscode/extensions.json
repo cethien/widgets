@@ -1,9 +1,9 @@
 {
 	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode",
-		"astro-build.astro-vscode",
-		"bradlc.vscode-tailwindcss"
-	],
-	"unwantedRecommendations": []
+		"budparr.language-hugo-vscode",
+		"bradlc.vscode-tailwindcss",
+		"adrianwilczynski.alpine-js-intellisense",
+		"otovo-oss.htmx-tags",
+		"esbenp.prettier-vscode"
+	]
 }
